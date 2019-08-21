@@ -44,7 +44,7 @@ public class ReadAndCount {
     private static void showResults(List<Integer> list, int[] results) {
         for (int i = 0; i < list.size(); i++) {
             if (results[i] > 0) {
-                System.out.println(list.get(i) + " jest " + results[i]);
+                System.out.println(list.get(i) + " - liczba wystąpień: " + results[i]);
             }
         }
     }
