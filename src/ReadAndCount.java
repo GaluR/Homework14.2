@@ -1,15 +1,17 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.*;
 
 public class ReadAndCount {
     public static void main(String[] args) {
         List<Integer> list = new ArrayList<>();
-        File file = new File("zadanie2.txt");
+        File file = new File("zadanie.txt");
         Scanner scan = null;
         try {
+            file.createNewFile();
             scan = new Scanner(file);
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         loadAndSort(list, scan);
