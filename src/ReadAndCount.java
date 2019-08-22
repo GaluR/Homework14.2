@@ -6,19 +6,18 @@ import java.util.*;
 public class ReadAndCount {
     public static void main(String[] args) {
         List<Integer> list = new ArrayList<>();
-        File file = new File("zadanie.txt");
+        File file = new File("zadanie2.txt");
         Scanner scan = null;
         try {
             file.createNewFile();
             scan = new Scanner(file);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         loadAndSort(list, scan);
-        Collections.sort(list);
         int[] results = new int[list.size()];
         counting(list, results);
         showResults(list, results);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private static void counting(List<Integer> list, int[] results) {
@@ -41,6 +40,7 @@ public class ReadAndCount {
             list.get(lines);
             lines++;
         }
+        Collections.sort(list);
     }
 
     private static void showResults(List<Integer> list, int[] results) {
